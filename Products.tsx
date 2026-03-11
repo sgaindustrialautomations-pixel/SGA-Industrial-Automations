@@ -218,7 +218,7 @@ export const ProductsDeltaPage: React.FC<{ setPage: (p: string) => void; onReque
       diff: "Exceptional cost-to-performance ratio with built-in high-speed I/O and support for open protocols like Modbus and EtherNet/IP.",
       why: "SGA provides certified IEC 61131-3 logic development, ensuring your Delta PLC architecture is modular, scalable, and fail-safe.",
       f: ["EtherNet/IP & EtherCAT support", "Built-in high-speed counters", "Dual-core processing", "Hot-swappable I/O units"],
-      visual: <PLCBlueprint/>
+      visual: <PLCBlueprint />
     },
     { 
       t: "Human Machine Interfaces (HMI)", 
@@ -370,7 +370,7 @@ export const ProductsAutonicsPage: React.FC<{ setPage: (p: string) => void; onRe
   const categories = [
     { 
       t: "Proximity Sensors", 
-      i: <Zap/>, 
+      i: <Zap />, 
       d: "Inductive and capacitive sensors for non-contact detection of metal and non-metal objects.",
       app: "Metal detection in automotive assembly and non-metal presence in bottling lines.",
       diff: "Superior noise immunity and IP67-rated ruggedness for oily environments.",
@@ -526,22 +526,12 @@ export const ProductsAutonicsPage: React.FC<{ setPage: (p: string) => void; onRe
 };
 
 // --- SWASTIK Automation Page ---
-const Droplets = ({ className }: { className?: string }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  ></svg>);
-
 export const ProductsSwastikPage: React.FC<{ setPage: (p: string) => void; onRequestQuote?: (p: string) => void }> = ({ setPage, onRequestQuote }) => {
+
   const swastikProducts = [
     {
       t: "Combo PLC HMI",
-      icon: <Layout className="w-10 h-10" />,
+      icon: Layout,
       items: ["4.3\" PLC HMI", "7\" PLC HMI", "4.3\" HMI", "MPC Series PLC", "HPC Series PLC"],
       desc: "Integrated logic and visualization for space-constrained industrial control panels.",
       visual: (
@@ -554,19 +544,25 @@ export const ProductsSwastikPage: React.FC<{ setPage: (p: string) => void; onReq
     },
     {
       t: "Multi Channel PID Temperature Controller",
-      icon: <Database className="w-10 h-10" />,
-      items: ["8/4 Channel PID Temperature Module", "8/4 Channel Current Module", "8 Channel Relay Module", "8 Channel SCR Module", "8 Channel Analog Module"],
+      icon: Database,
+      items: [
+        "8/4 Channel PID Temperature Module",
+        "8/4 Channel Current Module",
+        "8 Channel Relay Module",
+        "8 Channel SCR Module",
+        "8 Channel Analog Module"
+      ],
       desc: "High-density process monitoring and control modules for complex multi-zone environments.",
       visual: <PIDBlueprint />
     },
     {
       t: "Thyristor Power Regulator",
-      icon: <Zap className="w-10 h-10" />,
+      icon: Zap,
       items: ["SCR Power Regulator", "TRK Thyristor Trigger Module"],
       desc: "Precision power control for heating elements and high-voltage industrial loads.",
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <path d="M60 140 V60 L140 140 V60" fill="none" stroke="currentColor" strokeWidth="2" className="animate-pulse" />
+          <path d="M60 140 V60 L140 140 V60" fill="none" stroke="currentColor" strokeWidth="2" />
           <rect x="50" y="140" width="100" height="20" fill="currentColor" fillOpacity="0.2" />
           <line x1="100" y1="60" x2="100" y2="140" stroke="currentColor" strokeWidth="1" strokeDasharray="4 2" />
         </svg>
@@ -574,136 +570,78 @@ export const ProductsSwastikPage: React.FC<{ setPage: (p: string) => void; onReq
     },
     {
       t: "Hot Runner Temperature Controller",
-      icon: <Thermometer className="w-10 h-10" />,
+      icon: Thermometer,
       items: ["Hot Runner Controller Card", "Hot Runner Controller Panel"],
       desc: "Specialized thermal management for plastic injection molding and extrusion systems.",
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
           <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="1" />
           <path d="M100 60 V100 L140 100" stroke="currentColor" strokeWidth="2" />
-          <circle cx="100" cy="100" r="10" fill="currentColor" className="animate-pulse" />
+          <circle cx="100" cy="100" r="10" fill="currentColor" />
         </svg>
       )
     },
     {
       t: "Temperature Controller",
-      icon: <Gauge className="w-10 h-10" />,
-      items: ["GT8 / AK6 / AK3 Series", "GR818/858P Profile Controller", "Blind Digital / DTC / TC PID", "Push To Set / Knob Controllers", "Temperature Indicator with Ampere"],
+      icon: Gauge,
+      items: [
+        "GT8 / AK6 / AK3 Series",
+        "GR818/858P Profile Controller",
+        "Blind Digital / DTC / TC PID",
+        "Push To Set / Knob Controllers",
+        "Temperature Indicator with Ampere"
+      ],
       desc: "Universal thermal regulation from basic on-off to advanced profile-based ramp/soak control.",
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
           <rect x="50" y="50" width="100" height="100" rx="4" fill="none" stroke="currentColor" strokeWidth="2" />
-          <path d="M70 120 L90 80 L110 100 L130 60" stroke="currentColor" strokeWidth="2" fill="none" className="animate-pulse" />
+          <path d="M70 120 L90 80 L110 100 L130 60" stroke="currentColor" strokeWidth="2" fill="none" />
         </svg>
       )
     },
     {
       t: "Digital Counter",
-      icon: <Activity className="w-10 h-10" />,
+      icon: Activity,
       items: ["Tablet / Batch / Preset Counter", "Length Counter", "Count Totaliser", "Thumbwheel Counter"],
       desc: "High-speed counting solutions for packaging, textile, and pharmaceutical production lines.",
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <text x="100" y="115" textAnchor="middle" fontSize="40" fill="currentColor" fontWeight="black" className="animate-pulse">8888</text>
+          <text x="100" y="115" textAnchor="middle" fontSize="40" fill="currentColor" fontWeight="black">8888</text>
           <rect x="40" y="70" width="120" height="60" rx="4" fill="none" stroke="currentColor" strokeWidth="1" />
         </svg>
       )
     },
     {
       t: "Power Analyser Meter",
-      icon: <BarChart3 className="w-10 h-10" />,
-      items: ["AC/DC Amp & Volt Meters", "AVF / 3-Phase Meters", "V+A+W DC Meter", "Multi Function & Energy Meters", "Current Controller"],
+      icon: BarChart3,
+      items: [
+        "AC/DC Amp & Volt Meters",
+        "AVF / 3-Phase Meters",
+        "V+A+W DC Meter",
+        "Multi Function & Energy Meters",
+        "Current Controller"
+      ],
       desc: "Real-time electrical telemetry for power quality and consumption analytics.",
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
           <path d="M40 160 A80 80 0 0 1 160 160" fill="none" stroke="currentColor" strokeWidth="2" />
-          <line x1="100" y1="160" x2="140" y2="80" stroke="currentColor" strokeWidth="3" className="origin-bottom rotate-[-45deg] animate-pulse" />
+          <line x1="100" y1="160" x2="140" y2="80" stroke="currentColor" strokeWidth="3" />
         </svg>
       )
     },
     {
       t: "Digital Timer",
-      icon: <Clock className="w-10 h-10" />,
-      items: ["Sequential Timer", "Thumbwheel Timer (On-Delay/Universal)", "Universal Timer (Single/Dual Display)"],
+      icon: Clock,
+      items: [
+        "Sequential Timer",
+        "Thumbwheel Timer (On-Delay/Universal)",
+        "Universal Timer (Single/Dual Display)"
+      ],
       desc: "Precision time-based orchestration for sequential industrial processes.",
       visual: (
         <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
           <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M100 60 V100 L130 130" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="animate-[spin_20s_linear_infinite] origin-center" />
-        </svg>
-      )
-    },
-    {
-      t: "Scanner Cum Data Logger",
-      icon: <Search className="w-10 h-10" />,
-      items: ["Single/Dual Channel Data Logger", "8 Channel Temperature Scanner", "8 Channel Temperature Data Logger"],
-      desc: "Archival process visibility for quality assurance and regulatory data compliance.",
-      visual: (
-        <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <path d="M40 160 V40 H160 V160 H40" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M50 80 H150 M50 110 H150 M50 140 H150" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 2" />
-          <rect x="60" y="50" width="80" height="20" fill="currentColor" fillOpacity="0.1" />
-        </svg>
-      )
-    },
-    {
-      t: "Temperature Humidity Controller",
-      icon: <Droplets className="w-10 h-10" />,
-      items: ["Temperature + Humidity Controller", "Humidity Controller", "Humidity Sensor"],
-      desc: "Environmental stabilization for HVAC, cleanrooms, and food storage facilities.",
-      visual: (
-        <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <path d="M100 40 Q130 90 100 140 Q70 90 100 40" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeWidth="1" />
-          <circle cx="100" cy="140" r="10" fill="currentColor" className="animate-pulse" />
-        </svg>
-      )
-    },
-    {
-      t: "Scientific Instruments",
-      icon: <FlaskConical className="w-10 h-10" />,
-      items: ["Autoclave / BOD Controller", "Laminar/Biosafety Controller", "Stability / Card Type Controllers", "Timer + RPM Card"],
-      desc: "Ultra-precise specialized controls for laboratory and medical environments.",
-      visual: (
-        <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <path d="M80 40 H120 V80 L160 160 H40 L80 80 Z" fill="none" stroke="currentColor" strokeWidth="2" />
-          <path d="M60 160 Q100 130 140 160" fill="currentColor" fillOpacity="0.2" className="animate-pulse" />
-        </svg>
-      )
-    },
-    {
-      t: "Process Indicator Cum Controller",
-      icon: <Search className="w-10 h-10" />,
-      items: ["RPM / MPM Indicator & Controller", "Process / Ratio / Hour Meters", "Signal Isolator / Jumbo Displays", "Head Mounted Transmitter", "Pressure Controller"],
-      desc: "Universal process feedback and conversion for complex industrial field telemetry.",
-      visual: (
-        <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <rect x="40" y="70" width="120" height="60" rx="4" fill="none" stroke="currentColor" strokeWidth="1" />
-          <path d="M60 100 H140" stroke="currentColor" strokeWidth="2" className="animate-pulse" />
-          <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" />
-        </svg>
-      )
-    },
-    {
-      t: "Customized Controller",
-      icon: <Hammer className="w-10 h-10" />,
-      items: ["Load Cell / Flow Rate Indicator", "Vibrator / Heat Press Controllers", "Clutch Break Controller", "Hydraulic Timer"],
-      desc: "Bespoke logic solutions for non-standard industrial machinery and custom automation tasks.",
-      visual: (
-        <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <path d="M40 40 L160 160 M160 40 L40 160" stroke="currentColor" strokeWidth="1" strokeDasharray="10 5" />
-          <rect x="80" y="80" width="40" height="40" fill="currentColor" className="animate-spin-slow" />
-        </svg>
-      )
-    },
-    {
-      t: "Protection Relay",
-      icon: <Shield className="w-10 h-10" />,
-      items: ["Motor Protection Device", "Voltage Protection Relay", "Current Protection Relay", "SSR (Solid State Relay)"],
-      desc: "Fail-safe protection layers for high-value industrial motors and power distribution networks.",
-      visual: (
-        <svg viewBox="0 0 200 200" className="w-full h-full text-[#1B9B34]/30">
-          <path d="M100 40 L160 70 V130 L100 160 L40 130 V70 Z" fill="none" stroke="currentColor" strokeWidth="2" />
-          <path d="M70 100 L90 120 L130 80" stroke="currentColor" strokeWidth="3" fill="none" className="animate-pulse" />
+          <path d="M100 60 V100 L130 130" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       )
     }
@@ -711,65 +649,115 @@ export const ProductsSwastikPage: React.FC<{ setPage: (p: string) => void; onReq
 
   return (
     <div className="pt-32 pb-20 animate-reveal container mx-auto px-6">
+
       <div className="max-w-4xl mb-24 reveal">
-        <button onClick={() => setPage('products')} className="text-[#1B9B34] text-[10px] font-black uppercase tracking-widest mb-6 flex items-center space-x-2 group">
+        <button
+          onClick={() => setPage('products')}
+          className="text-[#1B9B34] text-[10px] font-black uppercase tracking-widest mb-6 flex items-center space-x-2 group"
+        >
           <ArrowRight size={14} className="rotate-180 group-hover:-translate-x-1 transition-transform" />
           <span>Back to Products</span>
         </button>
+
         <h1 className="text-5xl md:text-8xl font-black text-main mb-8 leading-tight tracking-tighter">
           SWASTIK <span className="text-[#1B9B34]">Instrumentation.</span>
         </h1>
+
         <p className="text-xl text-muted leading-relaxed max-w-2xl">
-          Swastik Automation specializes in precision instrumentation and adaptive process control. From medical-grade autoclave logic to high-power thyristor regulation, we deliver rugged reliability.
+          Swastik Automation specializes in precision instrumentation and adaptive process control.
+          From medical-grade autoclave logic to high-power thyristor regulation, we deliver rugged reliability.
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-48 reveal">
-        {swastikProducts.map((cat, i) => (
-          <ParallaxCard key={i} className="glass p-1 rounded-[2.5rem] border-[#1B9B34]/10 bg-slate-950/40 group hover:border-[#1B9B34]/40 transition-all duration-500 flex flex-col overflow-hidden">
-            <div className="p-10 flex-1 flex flex-col">
-              <div className="relative mb-10 h-32 flex items-center justify-center">
-                 <div className="absolute inset-0 opacity-20 scale-125">
+
+        {swastikProducts.map((cat, i) => {
+
+          const Icon = cat.icon;
+
+          return (
+            <ParallaxCard
+              key={i}
+              className="glass p-1 rounded-[2.5rem] border-[#1B9B34]/10 bg-slate-950/40 group hover:border-[#1B9B34]/40 transition-all duration-500 flex flex-col overflow-hidden"
+            >
+
+              <div className="p-10 flex-1 flex flex-col">
+
+                <div className="relative mb-10 h-32 flex items-center justify-center">
+
+                  <div className="absolute inset-0 opacity-20 scale-125">
                     {cat.visual}
-                 </div>
-                 <div className="relative z-10 p-5 bg-[#1B9B34]/10 text-[#1B9B34] rounded-2xl group-hover:bg-[#1B9B34] group-hover:text-white transition-all duration-500 shadow-xl">
-                   {cat.icon}
-                 </div>
-              </div>
-
-              <h3 className="text-xl font-bold text-main mb-4 group-hover:text-[#1B9B34] transition-colors uppercase tracking-tight h-14 overflow-hidden">{cat.t}</h3>
-              <p className="text-muted text-[10px] leading-relaxed mb-6 uppercase tracking-widest font-bold opacity-70 italic">{cat.desc}</p>
-              
-              <div className="space-y-2 mb-10 mt-auto bg-[#1B9B34]/5 p-6 rounded-2xl border border-[#1B9B34]/10">
-                <div className="text-[9px] font-black text-[#1B9B34] uppercase tracking-[0.2em] mb-2 flex items-center space-x-2">
-                   <Box size={10} /><span>Product Listing</span>
-                </div>
-                {cat.items.map((item, idx) => (
-                  <div key={idx} className="flex items-center space-x-2 text-[10px] font-bold text-main/80 hover:text-[#1B9B34] transition-colors cursor-default">
-                    <div className="w-1 h-1 rounded-full bg-[#1B9B34] opacity-50" />
-                    <span>{item}</span>
                   </div>
-                ))}
+
+                  <div className="relative z-10 p-5 bg-[#1B9B34]/10 text-[#1B9B34] rounded-2xl group-hover:bg-[#1B9B34] group-hover:text-white transition-all duration-500 shadow-xl">
+                    <Icon className="w-10 h-10" />
+                  </div>
+
+                </div>
+
+                <h3 className="text-xl font-bold text-main mb-4 group-hover:text-[#1B9B34] transition-colors uppercase tracking-tight min-h-[56px]">
+                  {cat.t}
+                </h3>
+
+                <p className="text-muted text-[10px] leading-relaxed mb-6 uppercase tracking-widest font-bold opacity-70 italic">
+                  {cat.desc}
+                </p>
+
+                <div className="space-y-2 mb-10 mt-auto bg-[#1B9B34]/5 p-6 rounded-2xl border border-[#1B9B34]/10">
+
+                  <div className="text-[9px] font-black text-[#1B9B34] uppercase tracking-[0.2em] mb-2 flex items-center space-x-2">
+                    <Box size={10} />
+                    <span>Product Listing</span>
+                  </div>
+
+                  {cat.items.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center space-x-2 text-[10px] font-bold text-main/80 hover:text-[#1B9B34] transition-colors"
+                    >
+                      <div className="w-1 h-1 rounded-full bg-[#1B9B34] opacity-50" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+
+                </div>
+
+                <button
+                  onClick={() => onRequestQuote?.(`Swastik Automation - ${cat.t}`)}
+                  className="w-full py-4 glass bg-[#1B9B34]/5 text-[#1B9B34] rounded-xl text-[10px] font-black uppercase tracking-[0.2em] border border-[#1B9B34]/10 hover:bg-[#1B9B34] hover:text-white transition-all shadow-lg"
+                >
+                  Request Quote
+                </button>
+
               </div>
 
-              <button 
-                onClick={() => onRequestQuote?.(`Swastik Automation - ${cat.t}`)}
-                className="w-full py-4 glass bg-[#1B9B34]/5 text-[#1B9B34] rounded-xl text-[10px] font-black uppercase tracking-[0.2em] border border-[#1B9B34]/10 hover:bg-[#1B9B34] hover:text-white transition-all shadow-lg group/btn"
-              >
-                <span>Request Quote</span>
-              </button>
-            </div>
-          </ParallaxCard>
-        ))}
+            </ParallaxCard>
+          );
+
+        })}
+
       </div>
 
       <div className="p-12 md:p-24 rounded-[4rem] glass bg-[#1B9B34]/5 border border-[#1B9B34]/10 text-center reveal">
-        <h3 className="text-3xl font-black text-main mb-6">Custom Swastik Implementation?</h3>
-        <p className="text-muted max-w-2xl mx-auto mb-10">Our engineering team specializes in retrofitting Swastik instrumentation into modern SCADA and IIoT ecosystems. Ensure your precision data is accessible everywhere.</p>
-        <button onClick={() => setPage('contact')} className="px-12 py-5 bg-[#1B9B34] text-white font-black rounded-2xl shadow-2xl hover:bg-emerald-600 transition-all uppercase tracking-[0.3em] text-[10px]">
+
+        <h3 className="text-3xl font-black text-main mb-6">
+          Custom Swastik Implementation?
+        </h3>
+
+        <p className="text-muted max-w-2xl mx-auto mb-10">
+          Our engineering team specializes in retrofitting Swastik instrumentation into modern SCADA and IIoT ecosystems.
+          Ensure your precision data is accessible everywhere.
+        </p>
+
+        <button
+          onClick={() => setPage('contact')}
+          className="px-12 py-5 bg-[#1B9B34] text-white font-black rounded-2xl shadow-2xl hover:bg-emerald-600 transition-all uppercase tracking-[0.3em] text-[10px]"
+        >
           Schedule Instrumentation Audit
         </button>
+
       </div>
+
     </div>
   );
 };
