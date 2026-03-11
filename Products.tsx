@@ -218,7 +218,7 @@ export const ProductsDeltaPage: React.FC<{ setPage: (p: string) => void; onReque
       diff: "Exceptional cost-to-performance ratio with built-in high-speed I/O and support for open protocols like Modbus and EtherNet/IP.",
       why: "SGA provides certified IEC 61131-3 logic development, ensuring your Delta PLC architecture is modular, scalable, and fail-safe.",
       f: ["EtherNet/IP & EtherCAT support", "Built-in high-speed counters", "Dual-core processing", "Hot-swappable I/O units"],
-      visual: <PLCBlueprint />
+      visual: <PLCBlueprint/>
     },
     { 
       t: "Human Machine Interfaces (HMI)", 
@@ -370,7 +370,7 @@ export const ProductsAutonicsPage: React.FC<{ setPage: (p: string) => void; onRe
   const categories = [
     { 
       t: "Proximity Sensors", 
-      i: <Zap />, 
+      i: <Zap/>, 
       d: "Inductive and capacitive sensors for non-contact detection of metal and non-metal objects.",
       app: "Metal detection in automotive assembly and non-metal presence in bottling lines.",
       diff: "Superior noise immunity and IP67-rated ruggedness for oily environments.",
@@ -526,6 +526,17 @@ export const ProductsAutonicsPage: React.FC<{ setPage: (p: string) => void; onRe
 };
 
 // --- SWASTIK Automation Page ---
+const Droplets = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  ></svg>);
+
 export const ProductsSwastikPage: React.FC<{ setPage: (p: string) => void; onRequestQuote?: (p: string) => void }> = ({ setPage, onRequestQuote }) => {
   const swastikProducts = [
     {
@@ -763,9 +774,9 @@ export const ProductsSwastikPage: React.FC<{ setPage: (p: string) => void; onReq
   );
 };
 
-const Droplets = ({ className, size }: { className?: string, size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M7 16.3c2.2 0 4-1.8 4-4 0-2.2-4-7-4-7s-4 4.8-4 7c0 2.2 1.8 4 4 4Z" />
-    <path d="M17 16.3c2.2 0 4-1.8 4-4 0-2.2-4-7-4-7s-4 4.8-4 7c0 2.2 1.8 4 4 4Z" />
-  </svg>
-);
+// const Droplets = ({ className, size }: { className?: string, size?: number }) => (
+//   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+//     <path d="M7 16.3c2.2 0 4-1.8 4-4 0-2.2-4-7-4-7s-4 4.8-4 7c0 2.2 1.8 4 4 4Z" />
+//     <path d="M17 16.3c2.2 0 4-1.8 4-4 0-2.2-4-7-4-7s-4 4.8-4 7c0 2.2 1.8 4 4 4Z" />
+//   </svg>
+// );
