@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SGA Industrial Automations | Industry 5.0</title>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #010409;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.1);
+        --card-hover: rgba(22, 163, 74, 0.05); /* Updated to emerald-600 tint */
+        --accent-color: #1b9b34; /* Official Brand Green */
+        --accent-glow: #22c55e;
+      }
+
+      .light-mode {
+        --bg-color: #f8fafc;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --glass-bg: rgba(15, 23, 42, 0.03);
+        --glass-border: rgba(15, 23, 42, 0.1);
+        --card-hover: rgba(22, 163, 74, 0.08);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        overflow-x: hidden;
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .mono { font-family: 'JetBrains Mono', monospace; }
+      
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 15px rgba(22, 163, 74, 0.3); }
+        50% { box-shadow: 0 0 30px rgba(22, 163, 74, 0.6); }
+      }
+      .neon-glow {
+        animation: glow 3s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        33% { transform: translateY(-30px) rotate(5deg); }
+        66% { transform: translateY(-15px) rotate(-5deg); }
+      }
+      .animate-float {
+        animation: float 10s ease-in-out infinite;
+      }
+
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 12s linear infinite;
+      }
+
+      @keyframes auditScan {
+        0% { transform: translateY(0); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translateY(400px); opacity: 0; }
+      }
+
+      @keyframes flowLine {
+        from { stroke-dashoffset: 30; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--glass-border);
+        transition: background 0.3s ease, border 0.3s ease;
+      }
+
+      .text-gradient {
+        background: linear-gradient(to right, #22c55e, #1b9b34);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @keyframes slide {
+        from { background-position: 0% 0%; }
+        to { background-position: 200% 0%; }
+      }
+
+      .animate-grid {
+        background-image: linear-gradient(rgba(22, 163, 74, 0.1) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(22, 163, 74, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: slide 20s linear infinite;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .tooltip {
+        position: relative;
+      }
+      .tooltip-text {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: 140%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: var(--bg-color);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(34, 197, 94, 0.4);
+        padding: 12px;
+        border-radius: 8px;
+        width: 240px;
+        white-space: normal;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 30px -10px rgba(22, 163, 74, 0.5), 0 0 20px rgba(22, 163, 74, 0.1);
+        z-index: 60;
+        text-align: left;
+      }
+      .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -6px;
+        border-width: 6px;
+        border-style: solid;
+        border-color: rgba(34, 197, 94, 0.4) transparent transparent transparent;
+      }
+      .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .tooltip-title {
+        color: #22c55e;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      .tooltip-desc {
+        color: var(--text-muted);
+        font-size: 0.7rem;
+        line-height: 1.4;
+        font-weight: 400;
+        display: block;
+      }
+
+      /* Utilities for dynamic colors */
+      .bg-main { background-color: var(--bg-color); }
+      .text-main { color: var(--text-main); }
+      .text-muted { color: var(--text-muted); }
+      .hover-glass:hover { background: var(--card-hover); }
+    </style>
+  </head>
+  <body class="dark-mode">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
